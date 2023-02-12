@@ -1,0 +1,10 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+
+wireguard:
+  interfaces:
+    - name: wg0
+      config_path: /etc/wireguard/wg0.conf
+      content: |
+        ${wireguard_config}

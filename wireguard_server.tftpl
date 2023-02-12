@@ -1,0 +1,14 @@
+[Interface]
+Address = ${server_private_address}
+PrivateKey = ${server_private_key}
+ListenPort = ${vpn_server_port}
+PostUp     = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE; sysctl -w net.ipv4.ip_forward=1
+PostDown   = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE; sysctl -w net.ipv4.ip_forward=0
+
+%{ for peer in vpn_clients ~}
+# ${peer.name}
+[Peer]
+PublicKey = ${peer.public_key}
+AllowedIPs = ${peer.ip_address}
+
+%{ endfor ~}

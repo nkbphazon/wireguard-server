@@ -1,0 +1,9 @@
+# configuration for tunnel '${client_name}' with public key '${client_public_key}'
+[Interface]
+PrivateKey = <insert your private key here>
+Address = ${client_address}
+
+[Peer]
+PublicKey = ${server_public_key}
+AllowedIPs = ${remote_network_prefix}, ${server_private_address}
+Endpoint = ${vpn_server_host}:${vpn_server_port}
