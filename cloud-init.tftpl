@@ -2,9 +2,15 @@
 package_update: true
 package_upgrade: true
 
+packages:
+  - iptables
+
 wireguard:
   interfaces:
     - name: wg0
       config_path: /etc/wireguard/wg0.conf
       content: |
         ${wireguard_config}
+
+runcmd:
+  - systemctl restart wg-quick@wg0

@@ -79,9 +79,9 @@ variable "virtual_machine_image_reference" {
   })
   description = "The image reference for the virtual machine."
   default = {
-    publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts-gen2"
+    publisher = "canonical"
+    offer     = "ubuntu-24_04-lts"
+    sku       = "minimal"
     version   = "latest"
   }
 }
