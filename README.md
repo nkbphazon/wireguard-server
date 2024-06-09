@@ -41,7 +41,7 @@
     **Minimal parameters (using defaults wherever possible)**
     ```
     module "wireguard_server" {
-      source = "git@github.com:nkbphazon/wireguard-server.git?ref=v1.0.0"
+      source = "git@github.com:nkbphazon/wireguard-server.git?ref=v1.1.0"
 
       server_public_key  = "... your generated public key ..."
       server_private_key = "... your generated private key ..."
@@ -61,7 +61,7 @@
     **All parameters**
     ```
     module "wireguard_server" {
-      source = "git@github.com:nkbphazon/wireguard-server.git?ref=v1.0.0"
+      source = "git@github.com:nkbphazon/wireguard-server.git?ref=v1.1.0"
 
       server_public_key  = "... your generated public key ..."
       server_private_key = "... your generated private key ..."
